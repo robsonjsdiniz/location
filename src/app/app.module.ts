@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { TodoComponent } from './todo/todo.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { TodoComponent } from './todo/todo.component';
     MatInputModule,
     MatListModule,
     BrowserAnimationsModule,
-    routing
+    routing,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
